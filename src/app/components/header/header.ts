@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.html',
-  styleUrls: ['./header.scss']
+  styleUrls: ['./header.scss'],
 })
 export class HeaderComponent {
   isMenuOpen = false;
@@ -15,9 +14,23 @@ export class HeaderComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
-sidebarOpen = false;
+  sidebarOpen = false;
 
-toggleSidebar() {
-  this.sidebarOpen = !this.sidebarOpen;
-}
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
+  hoverPanelVisible = false;
+  hoverTitle = '';
+  hoverDescription = '';
+
+  onMenuHover(title: string, description: string) {
+    this.hoverTitle = title;
+    this.hoverDescription = description;
+    this.hoverPanelVisible = true;
+  }
+
+  hideHoverPanel() {
+    this.hoverPanelVisible = false;
+  }
 }

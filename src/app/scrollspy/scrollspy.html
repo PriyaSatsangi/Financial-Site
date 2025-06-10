@@ -1,0 +1,31 @@
+<nav class="scrollspy-nav" [class.hidden]="hideNav">
+  <a href="#hero" [class.active]="activeSection === 'hero'" title="Hero">
+    <span class="nav-icon">🏠</span>
+  </a>
+  <a
+    href="#services"
+    [class.active]="activeSection === 'services'"
+    title="Services"
+  >
+    <span class="nav-icon">🛠</span>
+  </a>
+  <a
+    href="#contact"
+    [class.active]="activeSection === 'contact'"
+    title="Contact"
+  >
+    <span class="nav-icon">📞</span>
+  </a>
+  <a href="#footer" [class.active]="activeSection === 'footer'" title="Footer">
+    <span class="nav-icon">ℹ️</span>
+  </a>
+</nav>
+
+<button
+  class="back-to-top"
+  *ngIf="showBackToTop"
+  (click)="scrollToTop()"
+  title="Back to top"
+>
+  ⬆
+</button>

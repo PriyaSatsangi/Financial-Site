@@ -1,0 +1,77 @@
+.contact-links {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+
+  .link {
+    display: flex;
+    align-items: center;
+    background: #a95a5a;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 0 25px 25px 0;
+    transition: all 0.3s ease;
+    width: 45px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    i {
+      font-size: 18px;
+      margin-right: 10px;
+      min-width: 25px;
+      text-align: center;
+    }
+
+    span {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      width: 160px;
+      background: #0077b5;
+
+      span {
+        opacity: 1;
+      }
+
+      &.facebook {
+        background: #3b5998;
+      }
+      &.instagram {
+        background: #e4405f;
+      }
+      &.linkedin {
+        background: #0077b5;
+      }
+      &.email {
+        background: #555;
+      }
+    }
+  }
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.contact-links {
+  animation: bounceInLeft 1s ease-out;
+}

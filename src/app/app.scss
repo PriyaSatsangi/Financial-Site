@@ -1,0 +1,19 @@
+.scroll-indicator {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 0;
+  background-color: #845583;
+  z-index: 9999;
+  border-radius: 4px 0 0 4px;
+  transition: height 0.2s ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+// section {
+//   scroll-margin-top: 60px; /* so it doesn't hide under the header if you have one */
+//   padding-top: 60px;
+// }
