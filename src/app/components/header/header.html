@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="container header-container">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="FinPro Logo"  style="height: 70px;width: 130px;">
+      <!-- <p class="firstlogo">Acutec Global Services LLP</p>
+      <p class="sublogo">Formerly Acumen Software Technologies</p> -->
+    </div>
+    <nav class="nav-menu" [class.active]="isMenuOpen">
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn btn-primary contact-btn">Contact Us</button>
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <button class="hamburger-icon" (click)="toggleSidebar()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</header>
+
+<div class="overlay" *ngIf="sidebarOpen" (click)="toggleSidebar()"></div>
+
+<!-- Sidebar -->
+<nav class="side-nav" [class.open]="sidebarOpen">
+  <button class="close-btn" (click)="toggleSidebar()">✖</button>
+  <ul class="nav-links">
+    <li><a href="#home" (click)="toggleSidebar()">Home</a></li>
+    <li><a href="#services" (click)="toggleSidebar()">Services</a></li>
+    <li><a href="#products" (click)="toggleSidebar()">Products</a></li>
+    <li><a href="#about" (click)="toggleSidebar()">About</a></li>
+    <li><a href="#contact" (click)="toggleSidebar()">Contact</a></li>
+  </ul>
+</nav>

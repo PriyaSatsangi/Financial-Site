@@ -1,0 +1,117 @@
+// .hero {
+//   padding: 120px 0 80px;
+//   background-color: var(--light-gray);
+//   min-height: 100vh;
+//   display: flex;
+//   align-items: center;
+// }
+
+.hero {
+  padding: 120px 0 80px;
+  background-color: var(--light-gray);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  // 🔽 Add background image here
+//  background-image: url('../../../../assets/images/product1.avif'); // <-- Replace with actual image path
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+
+  // Optional: Add overlay for better text readability
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); // Adjust transparency or color as needed
+    z-index: -1;
+  }
+}
+
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content {
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .growth-chart {
+    max-width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+    }
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    order: -1;
+
+    .growth-chart {
+      max-width: 80%;
+    }
+  }
+}
