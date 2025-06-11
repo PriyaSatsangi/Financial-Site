@@ -1,9 +1,10 @@
 <header class="header">
   <div class="container header-container">
     <div class="logo">
-      <img src="assets/images/logo.png" alt="FinPro Logo" />
+      <img src="assets/images/logo.png" alt="FinPro Logo"  style="height: 70px;width: 130px;">
+      <!-- <p class="firstlogo">Acutec Global Services LLP</p>
+      <p class="sublogo">Formerly Acumen Software Technologies</p> -->
     </div>
-
     <nav class="nav-menu" [class.active]="isMenuOpen">
       <ul class="nav-list">
         <li><a href="#home" class="nav-link">Home</a></li>
@@ -12,69 +13,30 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
-
     <button class="btn btn-primary contact-btn">Contact Us</button>
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-    <!-- Sidebar Toggle -->
     <button class="hamburger-icon" (click)="toggleSidebar()">
       <span></span><span></span><span></span>
     </button>
   </div>
+
 </header>
 
-<!-- Overlay -->
 <div class="overlay" *ngIf="sidebarOpen" (click)="toggleSidebar()"></div>
 
 <!-- Sidebar -->
 <nav class="side-nav" [class.open]="sidebarOpen">
   <button class="close-btn" (click)="toggleSidebar()">✖</button>
   <ul class="nav-links">
-    <li
-      (mouseenter)="onMenuHover('Welcome to FinPro', 'We are committed to delivering financial solutions tailored to your business needs.')"
-      (mouseleave)="hideHoverPanel()"
-    >
-      <a href="#home" (click)="toggleSidebar()">
-        <i class="fas fa-home"></i> Home
-      </a>
-    </li>
-    <li
-      (mouseenter)="onMenuHover('Our Services', 'Discover our range of financial and consulting services designed to help your business grow.')"
-      (mouseleave)="hideHoverPanel()"
-    >
-      <a href="#services" (click)="toggleSidebar()">
-        <i class="fas fa-concierge-bell"></i> Services
-      </a>
-    </li>
-    <li
-      (mouseenter)="onMenuHover('Our Products', 'Explore our innovative financial tools and digital products tailored for your needs.')"
-      (mouseleave)="hideHoverPanel()"
-    >
-      <a href="#products" (click)="toggleSidebar()">
-        <i class="fas fa-box-open"></i> Products
-      </a>
-    </li>
-    <li
-      (mouseenter)="onMenuHover('About Us', 'Learn more about our mission, vision, and the team behind FinPro.')"
-      (mouseleave)="hideHoverPanel()"
-    >
-      <a href="#about" (click)="toggleSidebar()">
-        <i class="fas fa-info-circle"></i> About
-      </a>
-    </li>
-    <li
-      (mouseenter)="onMenuHover('Get in Touch', 'We are here to answer your queries. Reach out to us anytime.')"
-      (mouseleave)="hideHoverPanel()"
-    >
-      <a href="#contact" (click)="toggleSidebar()">
-        <i class="fas fa-envelope"></i> Contact
-      </a>
-    </li>
+    <li><a href="#home" (click)="toggleSidebar()">Home</a></li>
+    <li><a href="#services" (click)="toggleSidebar()">Services</a></li>
+    <li><a href="#products" (click)="toggleSidebar()">Products</a></li>
+    <li><a href="#about" (click)="toggleSidebar()">About</a></li>
+    <li><a href="#contact" (click)="toggleSidebar()">Contact</a></li>
   </ul>
 </nav>
-
-<div class="hover-panel" [class.visible]="hoverPanelVisible">
-  <div class="hover-content">
-    <h2>{{ hoverTitle }}</h2>
-    <p>{{ hoverDescription }}</p>
-  </div>
-</div>
